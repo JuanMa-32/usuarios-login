@@ -2,24 +2,24 @@ import { LoginPage } from '../auth/pages/LoginPage';
 import { NavBar } from '../components/NavBar';
 import { UserList } from '../components/UserList'
 import { UserModalForm } from '../components/UserModalForm';
-import { useUsers } from '../hooks/useUsers';
 
 
-function UsersPage({hanlderLogout}) {
+
+function UsersPage({
+  users,
+  userSelected,
+  inititalUserForm,
+  visibleFrom,
+
+  handlerDeleteUser,
+  hanlderUpdate,
+  hanlderAddUser,
+  handlerOpenForm,
+  handlerCloseForm
+}) {
 
   //aca recibo todo lo de mi hook 
-  const {
-    users,
-    userSelected,
-    inititalUserForm,
-    visibleFrom,
-
-    handlerDeleteUser,
-    hanlderUpdate,
-    hanlderAddUser,
-    handlerOpenForm,
-    handlerCloseForm
-  } = useUsers();
+ 
 
 
   return (
@@ -32,7 +32,7 @@ function UsersPage({hanlderLogout}) {
         handlerCloseForm={handlerCloseForm}
       />
       }
- <NavBar hanlderLogout={hanlderLogout}></NavBar>
+
       <div className='container my-4'>
         <h2>Usarios APP </h2>
 

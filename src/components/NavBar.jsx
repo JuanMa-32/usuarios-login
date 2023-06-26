@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 
 export const NavBar = ({hanlderLogout}) => {
@@ -12,15 +13,14 @@ export const NavBar = ({hanlderLogout}) => {
 
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#" className="nav-link text-secondary">
-               
-              </a>
+              <NavLink className="nav-link" to="/users">
+                Usuarios
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="nav-link text-white">
-               
-                Dashboard
-              </a>
+              <NavLink className="nav-link" to="/users/register">
+                Registar usuarios
+              </NavLink>
             </li>
             <li>
               <a href="#" className="nav-link text-white">
