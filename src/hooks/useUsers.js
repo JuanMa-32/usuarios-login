@@ -1,14 +1,8 @@
 import { useReducer, useState } from 'react'
 import { usersReducers } from './../reducers/usersReducers';
 import Swal from 'sweetalert2';
-const userInitial = [
-    {
-        id: 1,
-        userName: 'juan',
-        password: '123123',
-        email: 'juan@juan.com'
-    }
-];
+import { findAll } from '../servicios/userServicio';
+const userInitial = [];
 const inititalUserForm = {
     id: 0,
     userName: '',
@@ -26,6 +20,13 @@ export const useUsers = () => {
 
     const [visibleFrom, setvisibleFrom] = useState(false);
 
+    const getUsuario=async () =>{
+        const result = await findAll();
+        dispatch({
+            type:'loadingUsuarios',
+            payload: result.data
+        }) 
+    }
     const hanlderAddUser = (user) => {
         //console.log(user);
         let type;
@@ -96,7 +97,8 @@ export const useUsers = () => {
         hanlderUpdate,
         hanlderAddUser,
         handlerOpenForm,
-        handlerCloseForm
+        handlerCloseForm,
+        getUsuario
 
     }
 }

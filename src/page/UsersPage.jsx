@@ -15,7 +15,8 @@ function UsersPage({
   hanlderUpdate,
   hanlderAddUser,
   handlerOpenForm,
-  handlerCloseForm
+  handlerCloseForm,
+  
 }) {
 
   //aca recibo todo lo de mi hook 
